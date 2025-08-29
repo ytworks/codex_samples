@@ -1,0 +1,5 @@
+feature_type,x,y,z,tolerance
+HBD,1.2,3.4,5.6,1.0
+HBA,2.3,4.5,6.7,1.0
+Aromatic,3.4,5.6,7.8,1.5
+Hydrophobic,4.5,6.7,8.9,2.0

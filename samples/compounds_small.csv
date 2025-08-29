@@ -1,0 +1,6 @@
+smiles,id
+CCO,ethanol
+CCN(CC)CC,triethylamine
+c1ccccc1,benzene
+CC(=O)O,cetic_acid
+CCOC(=O)C,ethyl_acetate

@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.18.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pharmacophore-screening"
+version = "0.1.0"
+description = "2D/3D pharmacophore screening with RDKit and optional Ray parallelism"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Contributors" }]
+license = { file = "LICENSE" }
+dependencies = [
+  "pandas>=1.5",
+  "numpy>=1.22",
+  # RDKit via PyPI wheels; if unavailable on your platform, use the conda env.
+  "rdkit-pypi>=2022.9; platform_system != 'Linux'",
+  # On many Linux platforms, pip wheels for rdkit are also available:
+  "rdkit-pypi>=2022.9; platform_system == 'Linux'",
+  # Ray is optional at runtime; install to enable parallel execution.
+  "ray>=2.5; python_version < '3.13'",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7",
+  "black>=23",
+  "ruff>=0.3",
+  "jupyter>=1",
+]
+
+[project.scripts]
+phscreen = "pharmacophore_screening.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = [{ include = "pharmacophore_screening", from = "src" }]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+

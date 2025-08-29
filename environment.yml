@@ -1,0 +1,17 @@
+name: phscreen
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.9,<3.13
+  - rdkit>=2022.09
+  - pandas>=1.5
+  - numpy>=1.22
+  # Ray meta-package on conda-forge (includes core + deps)
+  - ray-default>=2.5
+  - pip
+  # Dev tools
+  - pytest>=7
+  - black>=23
+  - ruff>=0.3
+  - jupyter>=1
+

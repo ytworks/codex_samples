@@ -1,0 +1,6 @@
+pandas>=1.5
+numpy>=1.22
+ray>=2.5; python_version < '3.13'
+# Prefer conda for RDKit. If using pip/venv, rdkit-pypi provides wheels on most platforms.
+rdkit-pypi>=2022.9
+
